@@ -28,7 +28,7 @@ public interface NoticeEndpoints {
     Call<Notice> addNote(@Header("Authorization") String token, @Body Notice notice);
 
     @PUT("api/notices/{id}")
-    Call<Notice> updateNote(@Header("Authorization") String token, @Path("id") int id, Notice notice);
+    Call<Notice> updateNote(@Header("Authorization") String token, @Path("id") int id, @Body Notice notice);
 
     @DELETE("api/notices/{id}")
     Call<Notice> deleteNote(@Header("Authorization") String token, @Path("id") int id);
