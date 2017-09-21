@@ -44,6 +44,7 @@ public class NoticeDetailActivity extends AbstractAppContentActivity {
 
     @Override
     protected void loadData() {
+        
         if (noticeId > 0) {
             final NoticeEndpoints apiService = RestClient.getRestClient().create(NoticeEndpoints.class);
             Call<Notice> call = apiService.getNote("Bearer " + jwtToken, noticeId);
