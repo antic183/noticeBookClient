@@ -2,6 +2,12 @@ package ch.webing.ntb_client.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.TimeZone;
+
 /**
  * Created by antic-software-ing on 20.09.2017.
  */
@@ -13,6 +19,9 @@ public class Notice {
     private String title;
     @SerializedName("text")
     private String text;
+
+    @SerializedName("createdAtUtc")
+    private String createdAtUtc;
 
     public Notice(int id, String title, String text) {
         this.id = id;
@@ -42,5 +51,13 @@ public class Notice {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public String getCreatedAtUtc() {
+        return createdAtUtc;
+    }
+
+    public void setCreatedAtUtc(String createdAtUtc) throws ParseException {
+        this.createdAtUtc = createdAtUtc;
     }
 }

@@ -7,6 +7,8 @@ import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import ch.webing.ntb_client.model.Notice;
@@ -20,6 +22,11 @@ import static ch.webing.ntb_client.constant.ContantsActivityIntents.NOTICE_ID;
 
 public class NoticeDetailActivity extends AbstractAppContentActivity {
     private int noticeId;
+
+    private TextView txtViewId;
+    private TextView txtViewTimeStamp;
+    private LinearLayout detailsWrapper;
+
     private EditText txtTitle;
     private EditText txtText;
     private Button btnDelete;
@@ -33,6 +40,10 @@ public class NoticeDetailActivity extends AbstractAppContentActivity {
     @Override
     protected void initView(Bundle savedInstanceState) {
         setContentView(R.layout.activity_notice_detail);
+        txtViewId = (TextView) findViewById(R.id.noticeDetailActivity_rId);
+        txtViewTimeStamp = (TextView) findViewById(R.id.noticeDetailActivity_timestamp);
+        detailsWrapper = (LinearLayout) findViewById(R.id.detailsWrapper);
+
         txtTitle = (EditText) findViewById(R.id.noticeDetailActivity_inputTitle);
         txtText = (EditText) findViewById(R.id.noticeDetailActivity_inputText);
         btnDelete = (Button) findViewById(R.id.noticeDetailActivity_btnDelete);
@@ -41,6 +52,10 @@ public class NoticeDetailActivity extends AbstractAppContentActivity {
 
         if (noticeId == 0) {
             btnDelete.setVisibility(View.INVISIBLE);
+//            txtViewId.setVisibility(View.INVISIBLE);
+//            txtViewTimeStamp.setVisibility(View.INVISIBLE);
+            detailsWrapper.setVisibility(View.INVISIBLE);
+            detailsWrapper.getLayoutParams().height = 0;
         }
     }
 
@@ -70,6 +85,8 @@ public class NoticeDetailActivity extends AbstractAppContentActivity {
     }
 
     private void populateInputFields(Notice notice) {
+        txtViewId.setText("id: " + notice.getId());
+        txtViewTimeStamp.setText("created at utc: " + notice.getCreatedAtUtc());
         txtTitle.setText(notice.getTitle());
         txtText.setText(notice.getText());
     }
