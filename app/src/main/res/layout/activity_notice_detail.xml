@@ -8,17 +8,31 @@
     tools:context="ch.webing.ntb_client.NoticeOverviewActivity">
 
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/noticeDetailActivity_title"
+        android:textSize="18dp" />
+
     <EditText
         android:id="@+id/noticeDetailActivity_inputTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/noticeDetailActivity_title" />
+        android:hint="@string/noticeDetailActivity_title"
+        android:layout_marginBottom="15dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/noticeDetailActivity_text"
+        android:textSize="18dp" />
 
     <EditText
         android:id="@+id/noticeDetailActivity_inputText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/noticeDetailActivity_inputTitle"
+        android:layout_marginBottom="30dp"
         android:hint="@string/noticeDetailActivity_text" />
 
     <LinearLayout
@@ -26,30 +40,32 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/noticeDetailActivity_inputText"
         android:layout_marginTop="15dp"
-        android:orientation="horizontal"
-        android:gravity="center_horizontal"
-        >
+        android:gravity="fill_horizontal"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/noticeDetailActivity_btnSave"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:onClick="onSave"
             android:padding="15dp"
             android:text="@string/noticeDetailActivity_btnSave" />
 
         <Button
             android:id="@+id/noticeDetailActivity_btnCancel"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:onClick="onCancel"
             android:padding="15dp"
             android:text="@string/noticeDetailActivity_btnCancel" />
 
         <Button
             android:id="@+id/noticeDetailActivity_btnDelete"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:onClick="onDelete"
             android:padding="15dp"
             android:text="@string/noticeDetailActivity_btnDelete" />

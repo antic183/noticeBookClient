@@ -9,7 +9,7 @@
     <string name="contextMenu_delete">Delete</string>
     <string name="contextMenu_edit">Edit</string>
     <string name="noticeDetailActivity_btnChange">Change</string>
-    <string name="noticeDetailActivity_title">title</string>
+    <string name="noticeDetailActivity_title">Title</string>
     <string name="noticeDetailActivity_text">Text</string>
     <string name="noticeDetailActivity_btnSave">Save</string>
     <string name="noticeDetailActivity_btnCancel">Cancel</string>
