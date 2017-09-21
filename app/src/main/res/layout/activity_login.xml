@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingBottom="75dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ch.webing.ntb_client.LoginActivity"
+    android:gravity="center"
+    >
+
+    <EditText
+        android:id="@+id/loginActivity_inputEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/loginActivity_inputEmail" />
+
+    <EditText
+        android:id="@+id/loginActivity_inputPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loginActivity_inputEmail"
+        android:ems="10"
+        android:hint="@string/loginActivity_inputPassword"
+        android:inputType="textPassword" />
+
+    <Button
+        android:layout_marginTop="15dp"
+        android:id="@+id/loginActivity_btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/loginActivity_inputPassword"
+        android:onClick="onLogin"
+        android:padding="15dp"
+        android:text="@string/loginActivity_BtnLogin" />
+
+</RelativeLayout>
