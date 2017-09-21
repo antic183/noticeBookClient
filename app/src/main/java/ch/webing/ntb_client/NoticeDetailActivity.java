@@ -1,7 +1,9 @@
 package ch.webing.ntb_client;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -44,7 +46,7 @@ public class NoticeDetailActivity extends AbstractAppContentActivity {
 
     @Override
     protected void loadData() {
-        
+
         if (noticeId > 0) {
             final NoticeEndpoints apiService = RestClient.getRestClient().create(NoticeEndpoints.class);
             Call<Notice> call = apiService.getNote("Bearer " + jwtToken, noticeId);
@@ -132,7 +134,17 @@ public class NoticeDetailActivity extends AbstractAppContentActivity {
 
     public void onDelete(View view) {
         if (noticeId > 0) {
-            deleteItem();
+            new AlertDialog.Builder(this)
+                    .setTitle("Confirm delete!")
+                    .setMessage("Do you really want to delete this notice?")
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+
+                        public void onClick(DialogInterface dialog, int whichButton) {
+                            deleteItem();
+                        }
+                    })
+                    .setNegativeButton(android.R.string.no, null).show();
         } else {
             Toast.makeText(NoticeDetailActivity.this, "You cannot delete empty notice", Toast.LENGTH_LONG).show();
             return;
