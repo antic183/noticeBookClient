@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">NoticeBook Client</string>
-    <string name="loginActivity_inputEmail">email</string>
-    <string name="loginActivity_BtnLogin">login</string>
-    <string name="loginActivity_inputPassword">passwrod</string>
+    <string name="loginActivity_inputEmail">Email</string>
+    <string name="loginActivity_BtnLogin">Login</string>
+    <string name="loginActivity_inputPassword">Password</string>
     <string name="menu_item_settings">Settings</string>
     <string name="menu_item_logout">Logout</string>
     <string name="menu_item_about">About</string>
